@@ -16,7 +16,4 @@ jobs:
       run: npm ci
     - name: Run tests
       run: npm run cy:run
-    - name: Upload test results
-      uses: cypress-io/github-action@v1
-      with:
-        record: true
+    
