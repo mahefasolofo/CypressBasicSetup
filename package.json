@@ -1,0 +1,24 @@
+{
+  "name": "tpcypress3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tsc --noEmit "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahefasolofo/TpCypress3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mahefasolofo/TpCypress3/issues"
+  },
+  "homepage": "https://github.com/mahefasolofo/TpCypress3#readme",
+  "devDependencies": {
+    "cypress": "^12.3.0",
+    "typescript": "^4.9.4"
+  }
+}
