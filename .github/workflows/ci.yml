@@ -15,6 +15,9 @@ jobs:
       uses: actions/checkout@v3
     - name: Install dependencies
       run: npm ci
+      #vérifier que les fichiers sont bons d'abord avant de lancer les tests
+    - name: verification
+      run: npm run lint
 
   test:
     name: test
