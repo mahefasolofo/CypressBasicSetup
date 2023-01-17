@@ -16,4 +16,5 @@
 
 ## 4. Ajouter une intégration CI dans Github Actions
 
+
 ## 5. Lancer les tests Cypress dans Github Actions

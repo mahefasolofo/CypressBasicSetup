@@ -7,4 +7,5 @@ export default defineConfig({
     },
     specPattern: 'cypress/e2e/**/*.{js,ts}',
   },
+  reporter: 'reporters/custom.js',
 });

@@ -6,7 +6,8 @@ on:
       - dev
 
 jobs:
-  test:
+  verification:
+    name : verification
     runs-on: ubuntu-20.04
     
     steps:
@@ -17,5 +18,28 @@ jobs:
       #vérifier que les fichiers sont bons d'abord avant de lancer les tests
     - name: verification
       run: npm run lint
+
+  test:
+    name: test
+    runs-on: ubuntu-20.04    
+    needs: verification
+    steps:    
     - name: Run tests
-      run: npm run cy:run    
+      run: npm run cy:run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
+    - name : upload test results
+      uses : cypress-io/github-action@v1
+      with:
+        record : true
+        record_key: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+  rapport:
+    name : rapport artefact
+    runs-on: ubuntu-20.04
+    if: ${{ always() }}
+    needs: test
+    steps:
+      - name: Generate HTML report
+        run: npm run test:report
+    
+      
+  

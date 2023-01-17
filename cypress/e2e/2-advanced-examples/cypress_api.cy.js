@@ -8,6 +8,7 @@ context('Cypress.Commands', () => {
   // https://on.cypress.io/custom-commands
 
   it('.add() - create a custom command', () => {
+    
     Cypress.Commands.add('console', {
       prevSubject: true,
     }, (subject, method) => {
