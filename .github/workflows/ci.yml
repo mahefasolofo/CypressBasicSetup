@@ -28,7 +28,7 @@ jobs:
     - name: Run tests
       run: npx cypress run --reporter mochawesome
     - name: generation rapport HTML
-      run: npx mochawesome-merge --reportDir cypress/reports > mochawesome.json
+      run: npx mochawesome-merge --reportDir cypress/reports > mochawesome.json || true
       env:
         MOCHAWESOME_REPORT_DIR: cypress/reports
     - name: Upload HTML report
