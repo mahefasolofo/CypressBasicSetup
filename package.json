@@ -8,7 +8,12 @@
     "lint": "tsc --noEmit",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:spec": "cypress run --spec"
+    "cy:spec": "cypress run --spec",
+    "delete:reports": "rm cypress/results/* mochawesome.json || true ",
+    "combine:reports": "jrm cypress/results/combined-report.xml \"cypress/results/*.xml\"",
+    "prereport": "npm run delete:reports",
+    "report": "cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
+    "postreport": "npm run combine:reports"
   },
   "repository": {
     "type": "git",
@@ -29,6 +34,7 @@
     "mocha-junit-reporter": "^2.2.0",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.2.2",
+    "mochawesome-report-generator": "^6.2.0",
     "typescript": "^4.9.4"
   }
 }

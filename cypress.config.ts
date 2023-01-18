@@ -1,11 +1,15 @@
 import { defineConfig } from "cypress";
 
 export default defineConfig({
-  reporter: 'junit',
+  reporter: 'mochawesome',
   reporterOptions: {
-    mochaFile: 'results/my-test-output-[hash].xml',
-    toConsole: true,
+    reportDir: 'cypress/results',
+    overwrite: false,
+    html: false,
+    json: true,
   },
+  
+
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
