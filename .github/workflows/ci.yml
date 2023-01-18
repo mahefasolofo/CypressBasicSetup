@@ -29,9 +29,10 @@ jobs:
     - name: Run tests
       run: npm run cy:run
     - name: Merge reports
+      if: always()
       run: npm run report:merge
     - name: Html reports
-      run: report:html
+      run: npm run report:html
     - name: Upload HTML report
       uses: actions/upload-artifact@v2
       with:
