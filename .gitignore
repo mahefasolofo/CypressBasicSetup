@@ -3,11 +3,13 @@ cypress/screenshots/*
 cypress/videos/*
 
 #reports
-mochawesome-report/*
+mochawesome-report
+mochawesome.json
 
 #node_moduels
-node_modules/*
+node_modules
+results
 
-results/*
+.DS_Store
 
 

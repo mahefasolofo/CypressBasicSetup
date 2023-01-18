@@ -8,7 +8,7 @@ on:
 jobs:
   verification:
     name : verification
-    runs-on: ubuntu-latest   
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -16,6 +16,7 @@ jobs:
       run: npm ci
     - name: verification
       run: npm run lint
+
   cypress-test:
     name: cypress test
     needs: verification
@@ -26,27 +27,13 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Run tests
-      run: npx cypress run --reporter mochawesome --reporter-options reportDir="cypress/results",overwrite=false,html=false,json=true
-  
-  rapportHTML:
-    name: rapport HTML
-    if: ${{ always() }}
-    runs-on: ubuntu-latest   
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Install dependencies
-      run: npm ci
-    - name: generation rapport HTML
-      run: npx mochawesome-merge --reportDir cypress/reports > mochawesome.json
-      env:
-        MOCHAWESOME_REPORT_DIR: cypress/reports
+      run: npx cy:run
+    - name: Merge reports
+      run: npx report:merge
+    - name: Html reports
+      run: report:html
     - name: Upload HTML report
       uses: actions/upload-artifact@v2
       with:
         name: mochawesome-report
-        path: mochawesome.json
-
- 
-      
-  
+        path: mochawesome-report

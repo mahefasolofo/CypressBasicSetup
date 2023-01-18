@@ -8,12 +8,8 @@
     "lint": "tsc --noEmit",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:spec": "cypress run --spec",
-    "delete:reports": "rm cypress/results/* mochawesome.json || true ",
-    "combine:reports": "jrm cypress/results/combined-report.xml \"cypress/results/*.xml\"",
-    "prereport": "npm run delete:reports",
-    "report": "cypress run --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
-    "postreport": "npm run combine:reports"
+    "report:merge": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json",
+    "report:html": "npx marge mochawesome.json"
   },
   "repository": {
     "type": "git",
