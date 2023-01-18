@@ -31,7 +31,6 @@ jobs:
   rapportHTML:
     name: rapport HTML
     if: ${{ always() }}
-    needs: cypress-test
     runs-on: ubuntu-latest   
     steps:
     - name: Checkout
