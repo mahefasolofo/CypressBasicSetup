@@ -8,24 +8,21 @@ on:
 jobs:
   verification:
     name : verification
-    runs-on: ubuntu-20.04
-    
+    runs-on: ubuntu-20.04    
     steps:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Install dependencies
       run: npm ci
-      #vérifier que les fichiers sont bons d'abord avant de lancer les tests
     - name: verification
       run: npm run lint
-    #Effacer les anciennes tests
-    
-    -name: run tests
-      run: npx cypress run --reporter mochawesome
-    -name: merge
-      run: npx mochawesome-merge "cypress/results/*.json" > mochawesome.json
-    - name: transform to HTML
-      run: npx marge mochawesome.json
+    - name: Run tests
+      run: npm run cy:run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
+    - name : upload test results
+      uses : cypress-io/github-action@v1
+      with:
+        record : true
+        record_key: ${{ secrets.CYPRESS_RECORD_KEY }} 
 
  
       
