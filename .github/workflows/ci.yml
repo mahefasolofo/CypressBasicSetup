@@ -27,6 +27,17 @@ jobs:
       run: npm ci
     - name: Run tests
       run: npx cypress run --reporter mochawesome --reporter-options reportDir="cypress/results",overwrite=false,html=false,json=true
+  
+  rapportHTML:
+    name: rapport HTML
+    if: ${{ always() }}
+    needs: cypress-test
+    runs-on: ubuntu-latest   
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Install dependencies
+      run: npm ci
     - name: generation rapport HTML
       run: npx mochawesome-merge --reportDir cypress/reports > mochawesome.json
       env:
