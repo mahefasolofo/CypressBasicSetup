@@ -32,8 +32,10 @@ jobs:
       if: always()
       run: npm run report:merge
     - name: Html reports
+      if: always()
       run: npm run report:html
     - name: Upload HTML report
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: mochawesome-report
