@@ -19,8 +19,7 @@ jobs:
     - name: verification
       run: npm run lint
     #Effacer les anciennes tests
-    -name : delete old reports
-      run: npm run delete:reports
+    
     -name: run tests
       run: npx cypress run --reporter mochawesome
     -name: merge
