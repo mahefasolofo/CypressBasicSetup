@@ -62,3 +62,5 @@ Création d'un rapport HTML en local avec mochawesome
 
 - générer HTML : 
 `npx marge mochawesome.json`
+
+les commandes doivent être dans package.json
