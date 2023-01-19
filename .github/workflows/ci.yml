@@ -32,6 +32,7 @@ jobs:
       if: always()
       run: npm run report:merge
     -name: change to HTML
+      if: always()
       run: npm run report:html
     - name: Upload HTML report
       if: always()
