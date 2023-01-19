@@ -64,3 +64,6 @@ Création d'un rapport HTML en local avec mochawesome
 `npx marge mochawesome.json`
 
 les commandes sont enregistrés dans package.json
+
+
+## 6. Configuration eslint et Prettier
