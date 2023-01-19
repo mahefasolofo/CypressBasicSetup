@@ -30,10 +30,12 @@ jobs:
       run: npm run cy:run
     - name: Merge reports
       if: always()
-      run: npm run report:merge && npm run report:html
+      run: npm run report:merge && 
+    -name: change to HTML
+      run: npm run report:html
     - name: Upload HTML report
       if: always()
       uses: actions/upload-artifact@v2
       with:
         name: mochawesome-report
-        path: mochawesome.json
+        path: mochawesome-report
