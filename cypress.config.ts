@@ -1,4 +1,4 @@
-import { defineConfig } from "cypress";
+import { defineConfig } from 'cypress'
 
 export default defineConfig({
   reporter: 'mochawesome',
@@ -8,13 +8,10 @@ export default defineConfig({
     html: false,
     json: true,
   },
-  
 
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
-      
     },
   },
-  
-});
+})
