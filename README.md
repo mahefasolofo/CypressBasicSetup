@@ -108,7 +108,7 @@ ou une style plus moderne : sans point-virgule et avec des virgules à la fin
   "editor.defaultFormatter": "esbenp.prettier-vscode",  
   "editor.formatOnSave": true  
 }
-```
+
 NB : 
 - Désormais, chaque fois que nous enregistrons un fichier JavaScript, il sera automatiquement formaté à l'aide de Prettier
 - Il est mieux de formater le code quand on enregistre, mais pas quand on colle - car il ajoute toujours des sauts de ligne supplémentaires. Il est fortement recommandé de mettre les paramètres VSCode comme suivant
