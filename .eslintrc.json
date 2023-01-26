@@ -1,6 +1,6 @@
 {
   "parser" : "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint","cypress"],
+  "plugins": ["@typescript-eslint","cypress","prettier"],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module"
@@ -16,9 +16,9 @@
     "plugin:prettier/recommended",
     "plugin:react/recommended",
     "plugin:cypress/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint"],
+    // "plugin:@typescript-eslint/eslint-recommended",
+    // "plugin:@typescript-eslint/recommended",
+    "prettier"],
   "rules": {
     "no-var": "error",
     "no-console": "off"

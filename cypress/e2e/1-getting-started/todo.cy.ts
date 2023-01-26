@@ -57,12 +57,7 @@ describe('example to-do app', () => {
       .should('have.text', newItem)
   })
   
-  it('loads todos', () => {
-    // this is wrong - Cypress commands are asynchronous
-    // you cannot get element back from cy.get
-    // see https://on.cypress.io/get
-    const myApp = cy.get('#my-app')
-  })
+ 
 
   it('can check off an item as completed', () => {
     // In addition to using the `get` command to get an element by selector,
