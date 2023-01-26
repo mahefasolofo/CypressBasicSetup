@@ -177,6 +177,7 @@ package.json
       "npx eslint --fix",
     ]
   }
+```
 
 ### f. Utilisez Eslint avec Prettier 
 
@@ -262,9 +263,7 @@ package.json:
 
 ```json
 "lint-staged": {
-
     "*.{js,md}": ["eslint --fix"]
-
   }
 ```
 
@@ -282,9 +281,7 @@ Ensuite, définissez les paramètres de l'espace de travail VSCode pour pelucher
   "eslint.enable": true,  
   "eslint.alwaysShowStatus": true,  
   "editor.codeActionsOnSave": {
-
     "source.fixAll.eslint": true
-
   }, 
   "eslint.validate": [  
     "javascript",  
