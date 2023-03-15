@@ -1,5 +1,15 @@
 # Installation et configuration Cypress
 
+## 0. Démarrage du projet
+Après avoir cloné le Repository exécutez '
+>npm install
+pour installer les dépendences
+Ensuite  
+> find . -type f -print0 | xargs -0 sed -i 's/\r$//'
+pour changer les fin de séquence en 'LF' au lieu de 'CRLF'
+Pour démarrer Cypress : 
+> npm run cy:open
+
 ## 1. Créer un nouveau projet
     - Création nouveau Repository dans Github avec fichier Readme.md
     - npm init : fichier Json créé avec les paramètres par défaut
